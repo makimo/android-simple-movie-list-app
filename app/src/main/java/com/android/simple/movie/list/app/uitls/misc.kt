@@ -2,6 +2,7 @@ package com.android.simple.movie.list.app.uitls
 
 import android.app.Activity
 import android.view.View
+import android.widget.TextView
 import com.android.simple.movie.list.app.App
 import java.io.IOException
 
@@ -26,3 +27,14 @@ fun getFileFromAssets(fileName: String) =
         e.printStackTrace()
         null
     }
+
+fun context() = App.instance
+
+fun resources() = context().resources
+
+fun formatString(resId: Int, vararg formatArgs: Any?) =
+    resources().getString(resId, *formatArgs)
+
+fun TextView.format(resId: Int, vararg formatArgs: Any?) {
+    text = formatString(resId, *formatArgs)
+}

@@ -1,9 +1,11 @@
 package com.android.simple.movie.list.app.ui
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.android.simple.movie.list.app.data.models.Movie
 import com.android.simple.movie.list.app.data.repositories.MoviesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import io.reactivex.rxjava3.kotlin.Observables
+import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel

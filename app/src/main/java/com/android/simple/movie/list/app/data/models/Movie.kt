@@ -7,5 +7,5 @@ data class Movie(
     val title: String,
     val directors: List<String>,
     val year: String,
-    val genres: List<String>
+    val genres: List<Genre>
 )
