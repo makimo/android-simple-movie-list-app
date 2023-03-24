@@ -54,4 +54,7 @@ dependencies {
 
     // RxKotlin
     implementation 'io.reactivex.rxjava3:rxkotlin:3.0.1'
+
+    // Gson
+    implementation "com.google.code.gson:gson:2.8.9"
 }

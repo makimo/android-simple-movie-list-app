@@ -1,0 +1,58 @@
+[
+  {
+    "uuid": "7053ee0c-ca41-11ed-afa1-0242ac120002",
+    "name": "Action"
+  },
+  {
+    "uuid": "642f0f2e-ca43-11ed-afa1-0242ac120002",
+    "name": "Adventure"
+  },
+  {
+    "uuid": "08936ae1-b21b-47d3-9f46-0d008f125a81",
+    "name": "Animated"
+  },
+  {
+    "uuid": "a6ba4dce-ca41-11ed-afa1-0242ac120002",
+    "name": "Comedy"
+  },
+  {
+    "uuid": "aba10904-ca41-11ed-afa1-0242ac120002",
+    "name": "Drama"
+  },
+  {
+    "uuid": "b04a875a-ca41-11ed-afa1-0242ac120002",
+    "name": "Fantasy"
+  },
+  {
+    "uuid": "fcfb943b-40d1-4df9-ba29-a5ca3034da38",
+    "name": "Historical"
+  },
+  {
+    "uuid": "b725a596-ca41-11ed-afa1-0242ac120002",
+    "name": "Horror"
+  },
+  {
+    "uuid": "16234506-a754-466d-89a6-1c70e01a985a",
+    "name": "Musical"
+  },
+  {
+    "uuid": "c0b6bcc6-ca41-11ed-afa1-0242ac120002",
+    "name": "Mystery"
+  },
+  {
+    "uuid": "c8944d5a-ca41-11ed-afa1-0242ac120002",
+    "name": "Romance"
+  },
+  {
+    "uuid": "24f0144e-db63-4e7c-ad35-bd7e35791f94",
+    "name": "Science fiction"
+  },
+  {
+    "uuid": "d038372e-ca41-11ed-afa1-0242ac120002",
+    "name": "Thriller"
+  },
+  {
+    "uuid": "ddf20dfe-ca41-11ed-afa1-0242ac120002",
+    "name": "Western"
+  }
+]
