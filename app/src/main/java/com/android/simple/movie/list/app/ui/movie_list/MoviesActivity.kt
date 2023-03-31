@@ -1,4 +1,4 @@
-package com.android.simple.movie.list.app.ui
+package com.android.simple.movie.list.app.ui.movie_list
 
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.simple.movie.list.app.R
 import com.android.simple.movie.list.app.data.models.Genre
 import com.android.simple.movie.list.app.data.models.Movie
+import com.android.simple.movie.list.app.ui.viewmodels.MoviesViewModel
 import com.android.simple.movie.list.app.uitls.click
 import com.android.simple.movie.list.app.uitls.connect
 import com.android.simple.movie.list.app.uitls.hideSystemNavigationBar
@@ -37,7 +38,7 @@ class MoviesActivity : AppCompatActivity() {
     }
 
     private fun setupObservers() {
-        connect(this, moviesViewModel.onShowAllMovies, ::onAllMovies)
+        connect(this, moviesViewModel.onShowAllMovies, ::onShowAllMovies)
         connect(this, moviesViewModel.onShowFilters, ::onShowFilters)
 
         connect(this, filtersDialog.onApplyFilters, moviesViewModel::onApplyFilters)
@@ -48,7 +49,7 @@ class MoviesActivity : AppCompatActivity() {
         filtersDialog.show(supportFragmentManager, "filters")
     }
 
-    private fun onAllMovies(movies: List<Movie>) {
+    private fun onShowAllMovies(movies: List<Movie>) {
         moviesAdapter.setData(movies)
     }
 

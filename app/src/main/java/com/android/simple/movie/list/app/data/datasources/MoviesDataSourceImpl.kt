@@ -34,17 +34,17 @@ class MoviesDataSourceImpl : MoviesDataSource {
     private val gson by lazy { Gson() }
 
     init {
-        getAllGenres()
-        getRawMovies()
+        readAllGenres()
+        readRawMovies()
     }
 
-    private fun getRawMovies() {
+    private fun readRawMovies() {
         val fileString = getFileFromAssets(MOVIES_FILE)
         val movies = gson.fromJson(fileString, Array<MovieResponse>::class.java)
         rawMovies.onNext(movies.toList())
     }
 
-    private fun getAllGenres() {
+    private fun readAllGenres() {
         val fileString = getFileFromAssets(GENRES_FILE)
         val genres = gson.fromJson(fileString, Array<Genre>::class.java)
         allGenres.onNext(genres.toList())

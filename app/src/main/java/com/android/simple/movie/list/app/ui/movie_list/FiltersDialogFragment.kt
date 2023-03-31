@@ -1,4 +1,4 @@
-package com.android.simple.movie.list.app.ui
+package com.android.simple.movie.list.app.ui.movie_list
 
 import android.app.Dialog
 import android.os.Bundle
