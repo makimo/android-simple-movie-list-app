@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.simple.movie.list.app.R
 import com.android.simple.movie.list.app.data.models.Genre
 import com.android.simple.movie.list.app.data.models.Movie
+import com.android.simple.movie.list.app.uitls.click
 import com.android.simple.movie.list.app.uitls.connect
 import com.android.simple.movie.list.app.uitls.hideSystemNavigationBar
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,6 +19,7 @@ class MoviesActivity : AppCompatActivity() {
     private val moviesViewModel: MoviesViewModel by viewModels()
 
     private lateinit var moviesAdapter: MovieAdapter
+    private val filtersDialog = FiltersDialogFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,15 +27,25 @@ class MoviesActivity : AppCompatActivity() {
         hideSystemNavigationBar()
         setupAdapter()
         setupObservers()
+        setupListeners()
+    }
+
+    private fun setupListeners() {
+        txt_filters.click {
+            moviesViewModel.onFiltersButtonClick.onNext(Unit)
+        }
     }
 
     private fun setupObservers() {
-        connect(this, moviesViewModel.allGenres, ::onAllGenres)
-        connect(this, moviesViewModel.allMovies, ::onAllMovies)
+        connect(this, moviesViewModel.onShowAllMovies, ::onAllMovies)
+        connect(this, moviesViewModel.onShowFilters, ::onShowFilters)
+
+        connect(this, filtersDialog.onApplyFilters, moviesViewModel::onApplyFilters)
     }
 
-    private fun onAllGenres(genres: List<Genre>) {
-        // TODO
+    private fun onShowFilters(value: List<Pair<Genre, Boolean>>) {
+        filtersDialog.setFilters(value)
+        filtersDialog.show(supportFragmentManager, "filters")
     }
 
     private fun onAllMovies(movies: List<Movie>) {

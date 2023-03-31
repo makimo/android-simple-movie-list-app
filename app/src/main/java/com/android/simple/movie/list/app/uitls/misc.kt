@@ -38,3 +38,7 @@ fun formatString(resId: Int, vararg formatArgs: Any?) =
 fun TextView.format(resId: Int, vararg formatArgs: Any?) {
     text = formatString(resId, *formatArgs)
 }
+
+fun View.click(listener: () -> Unit) {
+    setOnClickListener { listener() }
+}

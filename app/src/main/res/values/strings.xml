@@ -6,4 +6,8 @@
     <string name="directors">Directors: %1$s</string>
     <string name="genre">Genre: %1$s</string>
     <string name="genres">Genres: %1$s</string>
+    <string name="filters">Filters</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="filter_by_genre">Filter by genre:</string>
 </resources>

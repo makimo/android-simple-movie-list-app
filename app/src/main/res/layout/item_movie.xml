@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dim_16"
         android:layout_marginTop="@dimen/dim_16"
-        android:textColor="@color/white"
+        android:textColor="@color/amber"
         android:textSize="@dimen/h3"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

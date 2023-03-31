@@ -6,8 +6,11 @@ import androidx.lifecycle.LiveDataReactiveStreams
 import io.reactivex.rxjava3.core.BackpressureStrategy
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.BehaviorSubject
+import io.reactivex.rxjava3.subjects.PublishSubject
 
-fun <T> defaultBehavior(default: T) = BehaviorSubject.createDefault(default)
+fun <T> behavior()                  = BehaviorSubject.create<T>()
+fun <T> defaultBehavior(default: T) = BehaviorSubject.createDefault<T>(default)
+fun <T> publishSubject()            = PublishSubject.create<T>()
 
 fun <T : Any> fromPublisher(observable: Observable<T>) =
     LiveDataReactiveStreams.fromPublisher(
